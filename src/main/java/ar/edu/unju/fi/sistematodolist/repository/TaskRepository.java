@@ -16,4 +16,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     //Lista tareas con fecha de vencimiento próxima
     List<Task> findByDueDateBefore(LocalDate date);
+
+    //Verifica si la tarea ya existe
+    boolean existsByTitle(String title);
 }

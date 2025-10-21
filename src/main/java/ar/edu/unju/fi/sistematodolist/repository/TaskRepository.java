@@ -19,4 +19,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
 
     //Verifica si la tarea ya existe
     boolean existsByTitle(String title);
+
+    //Verifica si la tarea ya existe para actualizarla
+    boolean existsByTitleAndIdNot(String title, Long id);
 }

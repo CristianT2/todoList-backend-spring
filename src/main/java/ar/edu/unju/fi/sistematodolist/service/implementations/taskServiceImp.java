@@ -62,7 +62,7 @@ public class taskServiceImp implements ITaskService {
         try {
             taskRepository.findById(id).orElseThrow(() -> new CustomeException("La tarea no existe"));
 
-            if (taskRepository.existsByTitle(taskDTO.getTitle())){
+            if (taskRepository.existsByTitleAndIdNot(taskDTO.getTitle(), id)){
                 throw new CustomeException("La tarea ya existe");
             }
 
